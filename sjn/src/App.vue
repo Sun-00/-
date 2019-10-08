@@ -1,6 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
+			<el-container>
+				<el-header style="height:20px"></el-header>
+				<el-main>Main</el-main>
+				<el-footer>Footer</el-footer>
+			</el-container>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
@@ -9,15 +14,15 @@
 </template>
 
 <style lang="scss">
+	*{padding: 0;margin: 0;}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
   a {
     font-weight: bold;
     color: #2c3e50;
@@ -25,5 +30,9 @@
       color: #42b983;
     }
   }
+}
+.el-header{
+	background: skyblue;
+	height: 40px;
 }
 </style>
