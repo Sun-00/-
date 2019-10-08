@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import index from './components/index'
+import activity from './components/activity'
+import agriculture from './components/agriculture'
+import characteristic from './components/characteristic'
+import children from './components/children'
+import skill from './components/skill'
 
 Vue.use(Router)
 
@@ -10,16 +15,33 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'index',
+      component: index
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+      path:'/skill',
+      name:'skill',
+      component:skill
+    },
+    {
+      path:'/activity',
+      name:'activity',
+      component:activity
+    },
+    {
+      path:'/agriculture',
+      name:'agriculture',
+      component:agriculture
+    },
+    {
+      path:'/characteristic',
+      name:'characteristic',
+      component:characteristic
+    },
+    {
+      path:'/children',
+      name:'children',
+      component:children
+    },
   ]
 })
