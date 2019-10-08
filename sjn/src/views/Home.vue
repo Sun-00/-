@@ -7,12 +7,8 @@
 
 export default {
   name: 'home',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style scoped>
-
 </style>
