@@ -92,6 +92,7 @@ export default {
 .header .video select{
   border: none;
   height: 100%;
+  outline: none;
 }
 .header .video input{
   width: 115px;
