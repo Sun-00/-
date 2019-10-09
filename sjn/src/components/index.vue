@@ -2,13 +2,16 @@
   <div id="app">
     <headers :num="0"></headers>
       <p>首页</p>
+      <footers></footers>
   </div>
 </template>
 <script>
 import headers from './header'
+import footers from './footer'
 export default {
   components:{
   headers,
+  footers,
 },
   data() {
     return {

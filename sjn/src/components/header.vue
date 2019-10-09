@@ -62,7 +62,6 @@ export default {
 .header ul{
   width: 100%;
   height: 44px;
-  margin-left:200px;
 }
 .header ul li{
   float: left;
@@ -73,6 +72,9 @@ export default {
   padding: 0 20px;
   box-sizing: border-box;
   border: 2px dashed #fff;
+}
+.header ul li:first-child{
+  margin-left:200px;
 }
 .header .active{
   border: 2px dashed #65c2ff;
