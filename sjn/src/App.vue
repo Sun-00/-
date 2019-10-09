@@ -16,6 +16,6 @@ export default {
 }
 #app{
   width: 100%;
-	background: url(assets/2.png);
+	background: url(http://jzfp.anhui.xingyao100.com/web/static/img/list_bg.34060a9.png);
 }
 </style>
