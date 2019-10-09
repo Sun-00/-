@@ -11,7 +11,7 @@
 					<span class="S_p" style="color: #00A0E9"><p>课程:</p><span @click="qb" :class="ys==3?'S_act':''">全部</span><span v-for="(k,index) in sting" :key="k.id" :class="ys==index?'S_act':''" @click="hh(index)">{{k.cate_name}}</span></span>
 					</div>
 					<div class="S_kc" style="padding-top: 10px;">
-					<span class="S_p" style="color: #00A0E9"><p>智能排序:</p><span>最新发布</span><span>最多喜欢</span><span>最多分享</span></span>
+					<span class="S_p" style="color: #00A0E9"><p>智能排序:</p><span @click="qb1">最新发布</span><span @click="qb2">最多喜欢</span><span @click="qb3">最多分享</span></span>
 					</div>
 				</div>
 				<div class="S_bottom">
@@ -43,6 +43,7 @@ export default {
 			arr:[],
 			sting:[],
 			ys:3,
+			ys2:0,
 			wenzi:'全部',
 		}
 	},
@@ -53,7 +54,10 @@ export default {
 	methods:{
 		qb(){
 			this.ys = 3
-				this.wenzi='全部'
+			this.wenzi='全部'
+		},
+		qb1(){
+			this.ys2=0
 		},
 		hh(inx){
 			if(inx==0){
