@@ -6,7 +6,7 @@ import agriculture from './components/agriculture'
 import characteristic from './components/characteristic'
 import children from './components/children'
 import skill from './components/skill'
-
+import detail from './components/activity_detail'
 Vue.use(Router)
 
 export default new Router({
@@ -43,5 +43,10 @@ export default new Router({
       name:'children',
       component:children
     },
+    {
+      path:'/detail/:id',
+      name:'detail',
+      component:detail
+    }
   ]
 })
