@@ -8,7 +8,7 @@
 						<span>当前位置:首页>益智乐园>{{wenzi}}</span>
 					</div>
 					<div class="S_kc" style="padding-top: 10px;">
-					<span class="S_p" style="color: #00A0E9"><p>课程:</p><span @click="qb" :class="ys==3?'S_act':''">全部</span><span v-for="(k,index) in sting" :key="k.id" :class="ys==index?'S_act':''" @click="hh(index)">{{k.cate_name}}</span></span>
+					<span class="S_p" style="color: #00A0E9"><p>课程:</p><span @click="qb" :class="ys==3?'S_act':''">全部</span><span v-for="(k,index) in sting" :key="k.id" :class="ys==index?'S_act':''" @click="hh(index,k.id)">{{k.cate_name}}</span></span>
 					</div>
 					<div class="S_kc" style="padding-top: 10px;">
 					<span class="S_p" style="color: #00A0E9"><p>智能排序:</p><span @click="qb1" :class="ys2==0?'S_act':''">最新发布</span><span @click="qb2" :class="ys2==1?'S_act':''">最多喜欢</span><span @click="qb3" :class="ys2==2?'S_act':''">最多分享</span></span>
@@ -66,7 +66,14 @@ export default {
 		qb3(){
 			this.ys2=2
 		},
-		hh(inx){
+		hh(inx,qiu){
+			console.log(qiu)
+			this.axios.get(`http://jzfp.anhui.xingyao100.com/api/v1/videos/${qiu}`,{params:{
+				size:16,
+			}}).then((data)=>{
+				this.arr = data.data.data
+				console.log(data)
+			})
 			if(inx==0){
 				this.ys=0
 				this.wenzi='多彩绘画课堂'
