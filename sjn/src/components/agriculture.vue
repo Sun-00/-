@@ -55,6 +55,7 @@ export default {
 		qb(){
 			this.ys = 3
 			this.wenzi='全部'
+			this.dianji()
 		},
 		qb1(){
 			this.ys2=0
@@ -99,7 +100,7 @@ export default {
 		width: 90%;
 		min-height: 1200px;
 		margin: 0 auto;
-		background: pink;
+		background: rgba(160,255,42,.9);
 		border-radius: 50px;
 		padding: 30px;
 		box-sizing: border-box;
