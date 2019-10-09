@@ -5,18 +5,20 @@
 			<div class="S_list">
 				<div class="S_top">
 					<div class="S_tple">
-						<span>当前位置:首页>益智乐园></span>
+						<span>当前位置:首页>益智乐园>{{wenzi}}</span>
 					</div>
 					<div class="S_kc" style="padding-top: 10px;">
-						<span class="S_p" style="color: #00A0E9"><p>课程:</p><span>全部</span><span></span><span></span></span>
-						
+					<span class="S_p" style="color: #00A0E9"><p>课程:</p><span @click="qb" :class="ys==3?'S_act':''">全部</span><span v-for="(k,index) in sting" :key="k.id" :class="ys==index?'S_act':''" @click="hh(index)">{{k.cate_name}}</span></span>
+					</div>
+					<div class="S_kc" style="padding-top: 10px;">
+					<span class="S_p" style="color: #00A0E9"><p>智能排序:</p><span>最新发布</span><span>最多喜欢</span><span>最多分享</span></span>
 					</div>
 				</div>
 				<div class="S_bottom">
 					<div class="S_div" style="clear:both;">
-						<div class="S_baoX" v-for="i in arr">
+						<div class="S_baoX" v-for="i in arr" :key="i.id">
 							<div class="S_xiao">
-								
+								<img :src="i.cover_img">
 							</div>
 							<span>{{i.title}}</span>
 						</div>
@@ -39,6 +41,9 @@ export default {
 		return {
 			index:2,
 			arr:[],
+			sting:[],
+			ys:3,
+			wenzi:'全部',
 		}
 	},
 	created(){
@@ -46,14 +51,29 @@ export default {
 		this.dianji()
 	},
 	methods:{
+		qb(){
+			this.ys = 3
+				this.wenzi='全部'
+		},
+		hh(inx){
+			if(inx==0){
+				this.ys=0
+				this.wenzi='多彩绘画课堂'
+			}
+			if(inx==1){
+				this.ys=1
+				this.wenzi='益智手工课堂'
+			}
+		},
 		ajax(){
 			this.axios.get(`http://jzfp.anhui.xingyao100.com/api/v1/categorys/${this.index}`).then((data)=>{
 				console.log(data)
+				this.sting = data.data.data
 			})
 		},
 		dianji(){
 			this.axios.get(`http://jzfp.anhui.xingyao100.com/api/v1/videos/${this.index}`,{params:{
-				size:20,
+				size:16,
 			}}).then((data)=>{
 				this.arr = data.data.data
 				console.log(data)
@@ -81,6 +101,10 @@ export default {
 		width: 100%;
 		min-height: 70px;
 		clear: both;
+	}
+	.S_kc{
+		height: 40px;
+		clear: both;
 		border-bottom: 3px cadetblue solid;
 	}
 	.S_p{
@@ -94,8 +118,9 @@ export default {
 	.S_p>span{
 		display: block;
 		float: left;
-		width: 80px;
+		min-width: 80px;
 		height: 30px;
+		font-size: 14px;
 		line-height: 30px;
 		margin-left: 10px;
 		text-align: center;
@@ -104,21 +129,32 @@ export default {
 	}
 	.S_act{
 		background: royalblue;
+		color: #fff;
 	}
 	.S_bottom{
 		width: 100%;
-		height: auto;
+		height: 100%;
 		padding: 20px;
 		box-sizing: border-box;
-		background: red;
 	}
 	.S_xiao{
-		width: 200px;
-		height: 200px;
+		width: 250px;
+		height: 190px;
+		cursor: pointer;
 		border: 3px dashed #00A0E9;
 	}
+	.S_xiao>img{
+		width: 100%;
+		height: 100%;
+	}
 	.S_baoX{
+		text-align: center;
 		float: left;
 		margin: 10px;
+	}
+	.S_baoX>span{
+		font-size: 14px;
+		line-height: 30px;
+		cursor: pointer;
 	}
 </style>
