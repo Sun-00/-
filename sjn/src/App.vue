@@ -16,5 +16,6 @@ export default {
 }
 #app{
   width: 100%;
+	background: url(assets/2.png);
 }
 </style>
