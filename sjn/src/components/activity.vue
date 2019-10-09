@@ -18,7 +18,7 @@
                     <p>开始时间:{{i.start_time}}</p>
                     <p>结束时间:{{i.end_time}}</p>
                     <p>活动地点:{{i.activity_place}}</p>
-                    <a href="javascript:;" class="a">详情</a>
+                    <div  class="a"><router-link :to="{name:'detail',params:{id:i.id}}">详情</router-link></div>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@ created() {
   color: #0e0e0e;
 }
 .item-con {
-  width: 430px;
+  width: 50%;
   height: 230px;
   float: left;
   /* margin-left: 30px; */
