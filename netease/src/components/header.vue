@@ -32,8 +32,8 @@
           <div class="logo"></div>
           <div class="search">
               <span class="iconfont icon-sousuo"></span>
-              <input type="text" placeholder="日式和风绒里居家拖鞋">
-              <button>搜索</button>
+              <input type="text" placeholder="日式和风绒里居家拖鞋" v-model="word" @keydown.enter="search">
+              <button @click="search">搜索</button>
               <swiper :options="swiperOption" ref="mySwiper">
                   <swiper-slide v-for="(i,index) in searchlist" :key="index">{{i.keyword}}</swiper-slide>
               </swiper>
@@ -89,11 +89,24 @@ export default {
               info:["在线客服","帮助中心","商务合作","开放平台"]
           }],
           list:[],
-          morelist:[],
           navs:false,
+          word:"",
+          searchList:[],
       }
   },
   methods: {
+      //搜索
+      search(){
+          this.$http('xhr/search/search.json?__timestamp=1571992333445&page=1&sortType=0&categoryId=0&descSorted=true&matchType=0&floorPrice=-1&upperPrice=-1&stillSearch=false&searchWordSource=1&size=40&keyword='+this.word+'&needPopWindow=true').then((res)=>{
+            console.log(res)      
+            if(res.data.data.directly==null){
+                alert("没有搜索到该物品，换个词试试")
+            }else{
+                this.searchList = res.data.data.directly.searcherResult.result
+                console.log(this.searchList)
+            }     
+        })
+      },
       showd(i){
         if(i==0){
             this.showss = true
@@ -114,6 +127,7 @@ export default {
       imghid(){
           this.imgs = false
       },
+      //分类的显示隐藏 筛选
       shownav(id){
           if(id==0){
               this.navs = false
@@ -122,23 +136,20 @@ export default {
               if(id==item.id){
                   this.navs = true
                   this.list=item.subCateGroupList
-                //   console.log(this.list)
-                //   this.list.forEach((i)=>{
-                //       this.morelist=i
-                //       console.log(this.morelist)
-                //   })
               }
           })
       }
   },
   created() {
+      //分类数据
       this.$http.get('xhr/globalinfo//queryTop.json?__timestamp=1571797131920').then((res)=>{
         //  console.log(res);
          this.catelist = res.data.data.cateList
         //  console.log(this.catelist)
      })
+     //搜索框下轮播
      this.$http.get('xhr/search/queryHotKeyWord.json?__timestamp=1571797131913').then((res)=>{
-        //  console.log(res)e
+        //  console.log(res)
          this.searchlist = res.data.data
      })
   },
@@ -239,7 +250,7 @@ export default {
 .header_con .search{
     display: inline-block;
     border:1px solid rgb(180,160,120);
-    width: 518px;
+    width: 517px;
     height: 36px;
     border-radius:18px;
     position: absolute;
