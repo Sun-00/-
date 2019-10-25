@@ -122,7 +122,7 @@ export default {
               if(id==item.id){
                   this.navs = true
                   this.list=item.subCateGroupList
-                  console.log(this.list)
+                //   console.log(this.list)
                 //   this.list.forEach((i)=>{
                 //       this.morelist=i
                 //       console.log(this.morelist)
@@ -135,7 +135,7 @@ export default {
       this.$http.get('xhr/globalinfo//queryTop.json?__timestamp=1571797131920').then((res)=>{
         //  console.log(res);
          this.catelist = res.data.data.cateList
-         console.log(this.catelist)
+        //  console.log(this.catelist)
      })
      this.$http.get('xhr/search/queryHotKeyWord.json?__timestamp=1571797131913').then((res)=>{
         //  console.log(res)e

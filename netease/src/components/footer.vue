@@ -149,6 +149,7 @@
 .foot_list li{
 	float: left;
 	box-sizing: border-box;
+	list-style: none;
 }
 .foot_list li p{
 	float: left;
