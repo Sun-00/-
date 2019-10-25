@@ -2,7 +2,7 @@
   <div class="header">
       <div class="header_top">
           <div class="con">
-              <p><span class="iconfont icon-guangboxinxi"></span><a href=" ">用银行卡在严选购物，最高随机直减99元</a></p>
+              <p><img src="https://yanxuan.nosdn.127.net/d132c2561f18f1149d566a60d05fd9b7.gif"><a href=" ">用银行卡在严选购物，最高随机直减99元</a></p>
               <ul>
                   <li v-for="(i,index) in nav" :key="index">{{i}}</li>
                   <li @mousemove="showd(0)">
@@ -138,7 +138,7 @@ export default {
          console.log(this.catelist)
      })
      this.$http.get('xhr/search/queryHotKeyWord.json?__timestamp=1571797131913').then((res)=>{
-        //  console.log(res)
+        //  console.log(res)e
          this.searchlist = res.data.data
      })
   },
@@ -160,16 +160,13 @@ export default {
     margin:0 auto;
 }
 .header_top .con p{
+    line-height: 36px;
     display: inline-block;
     color: rgb(180,160,120);
 }
 .header_top .con p a{
     font-size: 12px;
     color: rgb(180,160,120);
-}
-.header_top .con p span{
-    margin:10px;
-    line-height: 36px;
 }
 .header_top .con ul{
     width: 513px;
@@ -330,6 +327,8 @@ export default {
     right: auto;
     position: absolute;
     top: 144px;
+    z-index: 8;
+    background: #fff;
 }
 .cart ul{
     width: 100%;

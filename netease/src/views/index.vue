@@ -1,10 +1,23 @@
 <template>
-  <div class="content"></div>
+  <div class="content">
+      <div class="banner">
+
+      </div>
+  </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            
+        }
+    },
+    created() {
+        // this.$http('').then((res)=>{
 
+        // })
+    },
 }
 </script>
 
