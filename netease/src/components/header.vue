@@ -145,7 +145,7 @@ export default {
       this.$http.get('xhr/globalinfo//queryTop.json?__timestamp=1571797131920').then((res)=>{
         //  console.log(res);
          this.catelist = res.data.data.cateList
-        //  console.log(this.catelist)
+         console.log(this.catelist)
      })
      //搜索框下轮播
      this.$http.get('xhr/search/queryHotKeyWord.json?__timestamp=1571797131913').then((res)=>{
