@@ -110,47 +110,57 @@
 	color: #999;
 	height: 20px;
 }
+
 .yx-cp-police span{
 	margin-right: 8px;
 	font-size: 12px;
 }
+
 .yx-cp-police a{
 	font-size: 12px;
 	color: #999;
 }
+
 .yx-cp-copyright{
 	white-space: nowrap;
 	margin: 11px 0;
 }
+
 .yx-cp-copyright a,.yx-cp-copyright span{
 	font-size: 12px;
 	color: #999;
 	margin-right: 15px;
 }
+
 .yx-cp-text {
 	color: #999;
 	font-size: 12px;
 }
+
 .yx-cp-split{
 	margin: auto 13px;
 }
+
 .yx-cp-hr {
 	height: 1px;
 	margin-bottom: 27px;
 	background-color: #4f4f4f;
 	border: 0;
 }
+
 .foot_list{
 	height: 51px;
 	margin-bottom: 30px!important;
 	padding-left: 17px;
 	box-sizing: border-box;
 }
+
 .foot_list li{
 	float: left;
 	box-sizing: border-box;
 	list-style: none;
 }
+
 .foot_list li p{
 	float: left;
 	color: #fff;
@@ -158,6 +168,7 @@
 	line-height: 51px;
 	cursor: pointer;
 }
+
 .foot_list_logo{
 	background-image: -webkit-image-set(url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x1/icon-yxfoot-sb38e8b0402-214e6650b9.png?imageView&type=webp') 1x,url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x2/icon-yxfoot-s31a482cc9a-22e3c09f81.png?imageView&type=webp') 2x);
 	height: 50px;
@@ -172,6 +183,7 @@
 	box-sizing: border-box;
 	margin-right: 17px;
 }
+
 .foot_top{
 	height: 299px;
 	overflow: hidden;
@@ -181,11 +193,13 @@
 	border-top: 1px solid #e8e8e8;
 	box-sizing: border-box;
 }
+
 .foot_top_center{
 	width: 1090px;
 	margin: 0 auto;
 	position: relative;
 }
+
 .foot_a{
 	width: 80px;
 	height: 100px;
@@ -203,6 +217,7 @@
 	display: inline-block;
 	box-sizing: border-box;
 }
+
 .foot_logo{
 	background-image: -webkit-image-set(url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x1/icon-yxfoot-sb38e8b0402-214e6650b9.png?imageView&type=webp') 1x,url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x2/icon-yxfoot-s31a482cc9a-22e3c09f81.png?imageView&type=webp') 2x);
 	background-repeat: no-repeat;
@@ -214,8 +229,8 @@
 	overflow: hidden;
 	vertical-align: top;
 	font-size: 12px;
-	
 }
+
 .foot_logo2{
 	background-image: -webkit-image-set(url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x1/icon-yxfoot-sb38e8b0402-214e6650b9.png?imageView&type=webp') 1x,url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x2/icon-yxfoot-s31a482cc9a-22e3c09f81.png?imageView&type=webp') 2x);
 	background-repeat: no-repeat;
@@ -228,6 +243,7 @@
 	vertical-align: top;
 	font-size: 12px;
 }
+
 .foot_online{
 	margin-top: 10px;
 	box-sizing: border-box;
@@ -238,6 +254,7 @@
 	color: #333;
 	cursor: pointer;
 }
+
 .foot_center,.foot_top_right,.foot_top_left{
 	width: 33.33333%;
 	height: 204px;
@@ -248,6 +265,7 @@
 	line-height: 1;
 	box-sizing: border-box;
 }
+
 .foot_center_txt{
 	text-align: left;
 	font-size: 13px;
@@ -255,6 +273,7 @@
 	margin-bottom: 22px;
 	
 }
+
 .foot_c_logo{
 	background-repeat: no-repeat;
 	margin-right: 15px;
@@ -268,18 +287,22 @@
 	word-spacing: normal;
 	letter-spacing: normal;
 }
+
 .foot_logo3{
 	background-image: -webkit-image-set(url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x1/icon-yxfoot-sb38e8b0402-214e6650b9.png?imageView&type=webp') 1x,url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x2/icon-yxfoot-s31a482cc9a-22e3c09f81.png?imageView&type=webp') 2x);
 	background-position: 0 -470px;
 }
+
 .foot_logos{
 	background-image: -webkit-image-set(url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x1/icon-yxfoot-sb38e8b0402-214e6650b9.png?imageView&type=webp') 1x,url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x2/icon-yxfoot-s31a482cc9a-22e3c09f81.png?imageView&type=webp') 2x);
 	background-position: 0 -428px;
 }
+
 .foot_logo5{
 	background-image: -webkit-image-set(url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x1/icon-yxfoot-sb38e8b0402-214e6650b9.png?imageView&type=webp') 1x,url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-component/p/20170601/style/img/x2/icon-yxfoot-s31a482cc9a-22e3c09f81.png?imageView&type=webp') 2x);
 	background-position: 0 -326px;
 }
+
 .foot_bot{
 	height: 250px;
 	padding-top: 37px;

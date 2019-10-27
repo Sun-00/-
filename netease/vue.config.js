@@ -12,7 +12,7 @@ module.exports = {
         '/xhr': {
           target: 'http://you.163.com/',
           ws: true,
-          changeOrigin: true
+          changeOrigin: true,
         },
         '/api': {
           target: 'http://you.163.com/xhr/',
