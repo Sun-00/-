@@ -1,26 +1,22 @@
 module.exports = {
-  outputDir:'dist', //build输出目录
-  lintOnSave:false, //是否开启eslint
+    outputDir: 'dist',   //build输出目录
+    assetsDir: 'assets', //静态资源目录（js, css, img）
+    lintOnSave: false, //是否开启eslint
     devServer: {
-      open:true, //是否自动弹出浏览器页面
-      host:"localhost",
-      port:'8080',
-      https:false,
-      hotOnly:false,
-      proxy:null,
-      proxy: {
-        '/xhr': {
-          target: 'http://you.163.com/',
-          ws: true,
-          changeOrigin: true
-        },
-        '/api': {
-          target: 'http://you.163.com/xhr/',
-          changeOrigin: true,
-          pathRewrite: {
-            '/api':''
-          }
-        }
-      }
+        open: true, //是否自动弹出浏览器页面
+        host: "localhost", 
+        port: '8080', 
+        https: false,   //是否使用https协议
+        hotOnly: false, //是否开启热更新
+        proxy: null,
+		proxy: {
+			'/api': {
+				target: 'http://you.163.com/xhr/', //API服务器的地址
+				changeOrigin: true,
+				pathRewrite: {
+					'^/api': ''
+				}
+			}
+		},
     }
-  }
+}
