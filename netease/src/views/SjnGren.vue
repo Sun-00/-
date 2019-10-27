@@ -90,7 +90,7 @@
 					}else{
 						this.aindex++
 					}
-				},500)
+				},4000)
 			},
 		},
 		created() {
