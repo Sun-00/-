@@ -6,7 +6,6 @@
 
 <script>
 export default {
-<<<<<<< HEAD
   name: 'Header',
   data() {
       return {
