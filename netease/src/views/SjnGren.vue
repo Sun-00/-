@@ -11,8 +11,8 @@
 							<img :src="k" :style="aindex==index?'opacity:1':'opacity:0'" />
 						</li>
 					</ul>
-					<div class="S_left" @mouseout.stop="S_yichuqu" @mouseenter="S_cleartid" @click.stop="S_jianj"><</div>
-					<div class="S_right" @mouseout.stop="S_yichuqu" @mouseenter="S_cleartid" @click.stop="S_jiaj">></div>
+					<div class="S_left" @mouseout.stop="S_yichuqu" @mouseenter="S_cleartid" @click.stop="S_jianj">&lt;</div>
+					<div class="S_right" @mouseout.stop="S_yichuqu" @mouseenter="S_cleartid" @click.stop="S_jiaj">>&gt;</div>
 					<div class="S_dwei" :style="{marginLeft:-S_yquan*(10+10)/2+'px'}">
 							<a href="javascript:;" @mouseout="S_yichuqu"  @mouseenter="S_adj(index)" :style="aindex==index?'background:red':''" v-for="(s,index) in S_yquan" :key="s.id"></a>
 					</div>

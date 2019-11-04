@@ -45,7 +45,7 @@
           </div>
           <ul class="nav">
               <li @mouseenter="shownav(0)">首页</li>
-              <li v-for="(i,index) in catelist" :key="index" @mouseenter="shownav(i.id)">{{i.name}}</li>
+              <li v-for="(i,index) in catelist" :key="index" @mouseenter="shownav(i.id)" @click="qh(i.id)">{{i.name}}</li>
               <li @mouseenter="shownav(0)">为你严选</li>
               <li @mouseenter="shownav(0)">众筹</li>
           </ul>
@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import store from "../store/index"
 import  '../font_1472521_73iav90e9z3/iconfont.css'
 export default {
   name: 'Header',
@@ -92,6 +93,7 @@ export default {
           navs:false,
           word:"",
           searchList:[],
+          lis:[],
       }
   },
   methods: {
@@ -138,6 +140,25 @@ export default {
                   this.list=item.subCateGroupList
               }
           })
+      },
+      qh(id){
+          if(id==1005000){
+              this.$store.state.view = "Life"
+          }else if(id==1010000){
+              this.$store.state.view = "Clothes"
+          }else if(id==1005002){
+              this.$store.state.view = "Wine"
+          }else if(id==1013001){
+              this.$store.state.view = "Clean"
+          }else if(id==1011000){
+              this.$store.state.view = "Mother"
+          }else if(id==109243029){
+              this.$store.state.view = "Motion"
+          }else if(id==1043000){
+              this.$store.state.view = "Digital"
+          }else if(id==1019000){
+              this.$store.state.view = "Global"
+          }
       }
   },
   created() {
@@ -166,7 +187,7 @@ export default {
     height: 36px;
     background: rgb(51,51,51);
 }
-.header_top .con{
+.header_top .con{ 
     width: 1090px;
     margin:0 auto;
 }
