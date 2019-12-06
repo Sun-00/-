@@ -21,6 +21,7 @@ import Life from '../views/life'
 import Mother from '../views/mother'
 import Motion from '../views/motion'
 import Wine from '../views/wine'
+import yx from '../views/yanxuan'
 export default {
   name: 'home',
   components: {
@@ -37,6 +38,7 @@ export default {
     Mother,
     Motion,
     Wine,
+    yx,
   }
 }
 </script>

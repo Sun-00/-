@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="S_content">
+		<div class="S_content clearfix">
 			<div class="S_header">
 				<div class="S_her_top">
 					<span>首页 → <span>个护清洁</span></span>
@@ -12,7 +12,7 @@
 						</li>
 					</ul>
 					<div class="S_left" @mouseout.stop="S_yichuqu" @mouseenter="S_cleartid" @click.stop="S_jianj">&lt;</div>
-					<div class="S_right" @mouseout.stop="S_yichuqu" @mouseenter="S_cleartid" @click.stop="S_jiaj">>&gt;</div>
+					<div class="S_right" @mouseout.stop="S_yichuqu" @mouseenter="S_cleartid" @click.stop="S_jiaj">&gt;</div>
 					<div class="S_dwei" :style="{marginLeft:-S_yquan*(10+10)/2+'px'}">
 							<a href="javascript:;" @mouseout="S_yichuqu"  @mouseenter="S_adj(index)" :style="aindex==index?'background:red':''" v-for="(s,index) in S_yquan" :key="s.id"></a>
 					</div>
@@ -21,8 +21,14 @@
 					<div class="fl">分类:</div>
 					<ul class="S_list">
 						<li @click="qbdj" :class="typage==-1?'active':''">全部</li>
-						<li @click="lidj(index)" :class="typage==index?'active':''" v-for="(i,index) in itemArr" :key="i.id">{{i.name}}</li>
+						<li @click="lidj(index,i)" :class="typage==index?'active':''" v-for="(i,index) in itemArr" :key="i.id">{{i.name}}</li>
 					</ul>
+				</div>
+			</div>
+			<div class="S_foter">
+				<div class="clearfix S_xiao" v-for="p in S_xArr" :key="p.id">
+					<img :src="p.listPicUrl" />
+					<span class="S_span1">￥{{p.retailPrice}}</span><span class="S_span2">{{p.name}}</span>
 				</div>
 			</div>
 		</div>
@@ -45,6 +51,8 @@
 				aindex:0,
 				aindex1:0,
 				tid:null,
+				S_word:'爆款榜单',
+				S_xArr:[],
 			}
 		},
 		mounted(){
@@ -57,11 +65,17 @@
 			S_daktid(){
 				this.S_yichuqu1()
 			},
-			lidj(inx){
+			lidj(inx,s){
 				this.typage = inx
+				this.S_word=s.name
+				this.ajax()
 			},
 			qbdj(){
 				this.typage = -1
+				this.axios.get('/api/search/search.json?__timestamp=1571992333445&page=1&sortType=0&descSorted=true&matchType=0&floorPrice=-1&upperPrice=-1&stillSearch=false&searchWordSource=1&size=40&total=50&keyword=爆款榜单&needPopWindow=true', {
+				}).then((item) => {
+					this.S_xArr = item.data.data.directly.searcherResult.result
+				})
 			},
 			S_adj(inx){
 				this.aindex = inx
@@ -92,14 +106,23 @@
 					}
 				},4000)
 			},
+			ajax(){
+				this.axios.get('/api/search/search.json?__timestamp=1571992333445&page=1&sortType=0&descSorted=true&matchType=0&floorPrice=-1&upperPrice=-1&stillSearch=false&searchWordSource=1&size=40&total=50&keyword='+this.S_word+'&needPopWindow=true', {
+				}).then((item) => {
+					this.S_xArr = item.data.data.directly.searcherResult.result
+					console.log(item.data.data.directly.searcherResult.result)
+				})
+			},
 		},
 		created() {
+			this.ajax()
 			this.axios.get('/api/globalinfo//queryTop.json', {
 				params: {
 					'__timestamp': 1571797131920,
 				}
 			}).then((item) => {
 				this.itemArr = item.data.data.cateList[3].subCateList
+				console.log(item)
 			})
 			this.S_yichuqu1()
 		}
@@ -114,6 +137,37 @@
 
 	body {
 		background: #CCCCCC;
+	}
+	.clearfix::after,
+    .clearfix::before {
+        content: "";
+        display: table;
+        clear: both;
+      }
+	.S_xiao{
+		width: 275px;
+		height: 300px;
+		overflow: hidden;
+		padding: 10px;
+		box-sizing: border-box;
+		text-align: center;
+		border: 1px solid #ccc;
+		margin: 5px;
+		float: left;
+	}
+	.S_span1{
+		color: red;
+		font-size: 25px;
+	}
+	.S_span2{
+		font-size: 12px;
+	}
+	.S_xiao>img{
+		width: 100%;
+		height: 80%;
+	}
+	.S_xiao>span{
+		line-height: 50px;
 	}
 	.lunbo:hover>.S_right{
 		display: block;

@@ -46,8 +46,8 @@
           <ul class="nav">
               <li @mouseenter="shownav(0)">首页</li>
               <li v-for="(i,index) in catelist" :key="index" @mouseenter="shownav(i.id)" @click="qh(i.id)">{{i.name}}</li>
-              <li @mouseenter="shownav(0)">为你严选</li>
-              <li @mouseenter="shownav(0)">众筹</li>
+              <li @mouseenter="shownav(0)" @click="foryou">为你严选</li>
+              <li @mouseenter="shownav(0)" @click="zc()">众筹</li>
           </ul>
           <div class="cart" v-show="navs">
                 <ul>
@@ -149,7 +149,7 @@ export default {
           }else if(id==1005002){
               this.$store.state.view = "Wine"
           }else if(id==1013001){
-              this.$store.state.view = "Clean"
+              this.$store.state.view = "SjnGren"
           }else if(id==1011000){
               this.$store.state.view = "Mother"
           }else if(id==109243029){
@@ -159,6 +159,12 @@ export default {
           }else if(id==1019000){
               this.$store.state.view = "Global"
           }
+      },
+      foryou(){
+          this.$store.state.view = "yx"
+      },
+      zc(){
+          this.$store.state.view = "ON"
       }
   },
   created() {

@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    view:"ON"
+    view:"Life"
   },
   mutations: {
     change(state,v){

@@ -150,7 +150,7 @@
 			}
 		},
 		created(){
-				this.$http.get('./date.json').then((response)=>{
+				this.$http.get('./da.json').then((response)=>{
 //					window.console.log(response.data)
 					this.oban = response.data.bannerList[0].pcPicUrl
 					this.olist = response.data.workingList
